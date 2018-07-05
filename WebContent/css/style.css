@@ -1,0 +1,325 @@
+html,body{
+    font-family: 'font';
+	width:100%;
+	height:auto;
+	min-height:500px;
+	background-image:url('../image/bg01.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment:fixed;
+}
+
+.header-position{
+	float:left;
+    margin:0;
+    padding:0;
+    width:17%;
+    height:100%;
+    text-align:center;
+    position:fixed;
+}
+
+/* headerを除いたメインコンテンツの領域を指定 */
+
+.content{
+	float:right;
+	width:83%;
+	min-height:100%;
+	height:auto;
+	margin-bottom:-3%;
+}
+
+/* 大枠背景内に入れこむタイトル用 */
+
+.heading p{
+	margin:0 auto;
+	padding-bottom:3%;
+	font-size:3vw;
+}
+
+/* 大枠背景内のタイトル下「以下の項目を...」的な文章の文字サイズ */
+
+p{
+	font-size:1.5vw;
+}
+
+/* �独立型タイトル */
+
+.page-title{
+	border:solid #86473F;
+	border-width:4px 9px 7px 4px;
+	width:30%;
+	margin:5% 30% 3% 30%;
+	padding:2% 5%;
+	font-size:2.5vw;
+	text-align:center;
+	background-color:rgba(255, 255, 255, 0.7);
+	border-radius:20px;
+}
+
+/* 大枠背景 */
+
+.bg-large{
+	border:solid #86473F;
+	border-width:4px 9px 7px 4px;
+    width:50%;
+    height:auto;
+    padding:5%;
+    margin:3% 20%;
+	background-color:rgba(255, 255, 255, 0.8);
+	border-radius:50px;
+ 	text-align:center;
+ 	overflow: auto;
+
+}
+
+.input{
+	border-radius:5px;
+	width:30em;
+	height:2%;
+}
+
+/* エラーメッセージの色・文字サイズの指定とセンタリング */
+
+.error-message{
+	width:100%;
+	margin: 0 auto;
+	padding: 0;
+	color:#CC0000;
+	text-align:center;
+	font-size:0.9vw;
+}
+
+ /* 大きいボタン */
+
+.big-button{
+	text-align:center;
+	width:23%;
+	height:auto;
+	margin:0 auto;
+	padding:2%;
+	border-radius:15px;
+	cursor:pointer;
+	border:none;
+	color:white;
+	font-size:1.3vw;
+	background-color:#F17C67;
+	border-bottom:3px solid #86473F;
+	border-right:4px solid #86473F;
+}
+
+/*もっと大きいボタン*/
+.big-button2{
+	text-align:center;
+	width:30%;
+	height:auto;
+	margin:0 auto;
+	padding:2%;
+	border-radius:15px;
+	cursor:pointer;
+	border:none;
+	color:white;
+	font-size:1.3vw;
+	background-color:#F17C67;
+	border-bottom:3px solid #86473F;
+	border-right:4px solid #86473F;
+}
+
+/* 横に2つ情報を並べる際に使用する背景 */
+
+.bg-medium{
+	border:solid #86473F;
+	border-width:4px 9px 7px 4px;
+	width:36%;
+	height:auto;
+	margin:3% 3% 0% 3%;
+	padding:3%;
+	display:inline-block;
+	background-color:rgba(255, 255, 255, 0.7);
+	border-radius:20px;
+	line-height:80%;
+}
+
+/* 背景枠内2カラムレイアウト用 */
+
+.boxLeft{
+	float:left;
+	width:40%;
+}
+
+.boxRight{
+	float:right;
+	width:60%;
+	text-align:center;
+}
+
+/* 商品名 */
+
+.productName{
+	margin-top:0;
+	font-size:2.5vw;
+}
+
+/* 中枠背景内2カラム右側の文字サイズ指定 */
+
+.boxRight p{
+	font-size:1.2vw;
+}
+
+.boxRight span{
+	font-size:1.8vw;
+}
+
+/* 画像サイズ */
+
+.boxLeft img{
+	width:200px;
+	height:300px;
+    border-radius: 20px;
+}
+
+/* 小さいボタン */
+
+.small-button{
+	width:70%;
+	height:auto;
+	margin:2%;
+	padding:3%;
+	background-color:#F17C67;
+	border-bottom:3px solid #86473F;
+	border-right:4px solid #86473F;
+	border-radius:20px;
+	border:0;
+	cursor:pointer;
+	font-size:2vw;
+	color:white;
+}
+
+/* 以下商品一覧ページで使用しているCSS */
+
+.product-list{
+	width:90%;
+	margin:0 auto;
+	height:700px;
+}
+
+.product-list-box{
+	border:solid #86473F;
+	border-width:4px 9px 7px 4px;
+	width:28%;
+	height:45%;
+	float:left;
+	background-color:rgba(255, 255, 255, 0.7);
+	border-radius:20px;
+	position:relative;
+	margin:1%;
+	margin-left:2%;
+	text-align:center;
+}
+
+.product-list-box li{
+	padding-right:40px;
+}
+
+.product-list-box:hover{
+	border:solid #86473F;
+	border-width:4px 9px 7px 4px;
+	background-color:rgba(249,241,192, 0.80);
+}
+
+.item-image-box-200{
+	display:block;
+	margin:auto;
+	width:100px;
+	height:180px;
+	background:rgba(255, 255, 255, 0.7);
+	margin-top:10px;
+	border-radius:15px;
+}
+
+.proNameKana{
+	font-size:14px;
+}
+
+.proName{
+	font-weight:bold;
+	font-size:20px;
+}
+
+.recoDetails{
+	margin:0 auto;
+	position:absolute;
+	top:70px;
+	left:0%;
+	right:0;
+	width:100px;
+	background:#CD853F;
+	border-radius:15px;
+	color:white;
+}
+
+.toDetails{
+	margin:0 auto;
+	width:100px;
+	height:20px;
+	line-height:20px;
+	background-color:#F17C67;
+	border-bottom:3px solid #86473F;
+	border-right:4px solid #86473F;
+	border-radius:15px;
+	color:white;
+}
+
+.toDetails a{
+	text-decoration:none;
+	display:block;
+	color:white;
+}
+
+.pager{
+	clear:left;
+	text-align:center;
+	font-size:30px;
+	margin-bottom:30px;
+}
+
+/* 入力フォームのテーブル位置・各セルの幅を指定 */
+
+.vertical-list-table {
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 30px;
+}
+
+/* 入力フォームの項目名を右寄せ(コロンぞろえ)に */
+
+.vertical-list-table th {
+	text-align: right;
+}
+
+/* master.jspにてセレクトボックスのサイズ指定 */
+
+.select-box{
+margin:5% 30% 2% 30%;
+width:20%;
+height:10%;
+}
+
+.select-box, .stock{
+width:40%;
+}
+
+/* フッターとコンテンツ最下部が被ってしまうときの余白確保 */
+
+.space{
+width:100%;
+height:80px;
+}
+
+/* フッター固定用 */
+
+.footer, .push{
+height:7%;
+}
+

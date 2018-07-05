@@ -1,0 +1,30 @@
+section{
+	display:block;
+}
+section .fusuma div{
+	animation-name: open;
+    animation-iteration-count:1;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+#open .fusuma div.maku{
+	background-image:url('../image/uirou.jpg');
+	background-size:90%;
+	background-repeat:no-repeat;
+	height:900px;
+	width:2000px;
+}
+@keyframes open{
+	0%{
+	    transform:translate(-10px,0px);
+	}
+	90%{
+	    transform:translate(-10px,-900px);
+	    opacity:1;
+	}
+	100%{
+	    transform:translate(-10px,-910px);
+	    scale:0;
+	}
+}

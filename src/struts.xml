@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
+	<!-- <constant name="struts.devMode" value="true" />  -->
+	<package name="com.internousdev.miyako.action" extends="struts-default">
+
+<!-- アニメーション 開始 -->
+	<action name="PreToppageAction" class="com.internousdev.miyako.action.PreToppageAction" method="execute">
+       <result name="success">pretoppage.jsp</result>
+    </action>
+    <action name="ToppageAction" class="com.internousdev.miyako.action.ToppageAction" method="execute">
+       <result name="success">toppage.jsp</result>
+    </action>
+<!-- アニメーション終了 -->
+
+    <action name="HomeAction" class="com.internousdev.miyako.action.HomeAction" method="execute">
+       <result name="success">toppage.jsp</result>
+    </action>
+
+
+<!--  ログイン機能 開始 -->
+      <action name="LoginAction" class="com.internousdev.miyako.action.LoginAction"
+            method="execute">
+            <result name="success">toppage.jsp</result>
+            <result name="error">login.jsp</result>
+            <result name="admin">master.jsp</result>
+            <result name="settlement">cart.jsp</result>
+        </action>
+        <!-- <action name="LoginAction" class="com.internousdev.miyako.action.LoginAction"
+            method="execute">
+            <result name="success">login.jsp</result>
+            <result name="admin">master.jsp</result>
+        </action> -->
+
+        <!-- 当初LoginActionとGoLoginActionの機能において遷移が誤っていたため、それまでの記述をコメントアウトする形で残しておく -->
+       <action name="GoLoginAction"
+            class="com.internousdev.miyako.action.GoLoginAction" method="execute">
+            <result name="success">login.jsp</result>
+            <result name="admin">master.jsp</result>
+            <result name="input">master.jsp</result>
+
+        </action>
+     <!-- ログイン機能 終了 -->
+
+
+    <!--  パスワード再設定機能 開始 -->
+		<action name="ResetPasswordAction"
+			class="com.internousdev.miyako.action.ResetPasswordAction"
+			method="execute">
+			<result name="success">resetPassword.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="ResetPasswordConfirmAction"
+			class="com.internousdev.miyako.action.ResetPasswordConfirmAction"
+			method="execute">
+			<result name="success">resetPasswordConfirm.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+		</action>
+		<action name="ResetPasswordCompleteAction"
+			class="com.internousdev.miyako.action.ResetPasswordCompleteAction"
+			method="execute">
+			<result name="success">resetPasswordComplete.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+		</action>
+	<!-- 	パスワード再設定機能 終了 -->
+
+	<!-- ユーザー登録機能 開始 -->
+		<action name="CreateUserAction" class="com.internousdev.miyako.action.CreateUserAction" method="execute">
+			<result name="success">createUser.jsp</result>
+		</action>
+
+		<action name="CreateUserConfirmAction" class="com.internousdev.miyako.action.CreateUserConfirmAction" method="execute">
+			<result name="success">createUserConfirm.jsp</result>
+			<result name="error">createUser.jsp</result>
+		</action>
+
+		<action name="CreateUserCompleteAction" class="com.internousdev.miyako.action.CreateUserCompleteAction" method="execute">
+			<result name="success">createUserComplete.jsp</result>
+			<result name="error">createUser.jsp</result>
+		</action>
+	<!-- ユーザー登録機能 終了 -->
+
+
+	<!-- 商品一覧・詳細機能 開始 -->
+		<action name="ProductInfoAction" class="com.internousdev.miyako.action.ProductInfoAction" method="execute">
+			<result name="success">productInfo.jsp</result>
+		</action>
+
+		<action name="ProductDetailsAction" class="com.internousdev.miyako.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+		</action>
+	<!-- 商品一覧・詳細機能 終了 -->
+
+	<!-- カート機能 開始 -->
+		<action name="CartAction" class="com.internousdev.miyako.action.CartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<action name="AddCartAction" class="com.internousdev.miyako.action.AddCartAction" method="execute">
+		<interceptor-ref name="defaultStack" />
+		<interceptor-ref name="token"/>
+          <result name="success">cart.jsp</result>
+          <result name="error">toppage.jsp</result>
+          <result name="invalid.token">cart.jsp</result>
+        </action>
+
+        <action name="DeleteCartAction" class="com.internousdev.miyako.action.DeleteCartAction" method="execute">
+          <result name="success">cart.jsp</result>
+          <result name="error">cart.jsp</result>
+        </action>
+	<!-- カート機能 終了 -->
+
+	<!-- 決済完了 開始 -->
+		<action name="BuyItemConfirmAction"
+			class="com.internousdev.miyako.action.BuyItemConfirmAction"
+			method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="BuyItemCompleteAction"
+			class="com.internousdev.miyako.action.BuyItemCompleteAction"
+			method="execute">
+			<result name="success">buyItemComplete.jsp</result>
+			<result name="error">buyItemError.jsp</result>
+			<result name="error2">buyItemConfirm.jsp</result>
+			<result name="other">cart.jsp</result>
+		</action>
+	<!-- 決済完了 終了 -->
+
+	<!-- 宛先情報登録 開始 -->
+		<action name="AddressRegisterAction"
+			class="com.internousdev.miyako.action.AddressRegisterAction"
+			method="execute">
+			<result name="success">addressRegister.jsp</result>
+		</action>
+
+		<action name="AddressRegiConfirmAction"
+			class="com.internousdev.miyako.action.AddressRegiConfirmAction"
+			method="execute">
+			<result name="success">addressRegiConfirm.jsp</result>
+			<result name="error">addressRegister.jsp</result>
+		</action>
+
+		<action name="AddressRegiCompleteAction"
+			class="com.internousdev.miyako.action.AddressRegiCompleteAction"
+			method="execute">
+			<result name="success">addressRegiComplete.jsp</result>
+			<result name="error">toppage.jsp</result>
+        </action>
+		<action name="GoBuyItemConfirmAction" class="com.internousdev.miyako.action.GoBuyItemConfirmAction" method="execute">
+		   <result name="success">buyItemConfirm.jsp</result>
+		</action>
+
+	<!-- 宛先情報登録 終了 -->
+
+	<!-- 購入履歴機能 -->
+		<action name="PurchaseHistoryAction" class="com.internousdev.miyako.action.PurchaseHistoryAction" method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+		</action>
+
+		<action name="DeletePurchaseHistoryAction" class="com.internousdev.miyako.action.DeletePurchaseHistoryAction" method="delete">
+			<result name="success">purchaseHistory.jsp</result>
+		</action>
+
+	<!-- 購入履歴機能 終了 -->
+
+	<!-- マイページ機能 -->
+		<action name="MyPageAction" class="com.internousdev.miyako.action.MyPageAction" method="execute">
+		<result name="success">myPage.jsp</result>
+		<result name="error">login.jsp</result>
+		</action>
+   <!--  マイページ機能 終了 -->
+
+    <!-- ログアウト機能 開始 -->
+		<action name="LogoutAction" class="com.internousdev.miyako.action.LogoutAction" method="execute">
+			<result name="success">toppage.jsp</result>
+		</action>
+	<!-- ログアウト機能 終了 -->
+
+
+	<!-- 商品検索機能 開始 -->
+	<action name="ProductSearchAction"	class="com.internousdev.miyako.action.ProductSearchAction" method="execute">
+			<result name="success">productInfo.jsp</result>
+			<result name="error">productInfo.jsp</result>
+
+	</action>
+
+	<action name="MasterAction"	class="com.internousdev.miyako.action.MasterAction" method="execute">
+			<result name="success">master.jsp</result>
+			<result name="error">toppage.jsp</result>
+	</action>
+
+
+	</package>
+</struts>

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.MypageName{
+	text-align:center;
+	font-size:2.3vw;
+}
+
+.mypage-table {
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 15px;
+	font-size:1.5vw;
+}
+
+.mypage-table th {
+	text-align: right;
+}
+
+.mypage-table td {
+	text-align: left;
+	font-weight:bold;
+}
+
+.button{
+	text-align:center;
+}
+
+

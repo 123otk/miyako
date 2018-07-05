@@ -1,0 +1,26 @@
+body{
+	background-image: url("../image/sakura5.jpg");
+    backgournd-size:70%;
+    background-repeat:no-repeat;
+}
+section .logo2 div {
+    animation-name: fadeIn;
+    animation-iteration-count:1;
+    animation-timing-function: ease;
+    animation-duration: 7s;
+}
+#logo .logo2 div.back{
+	position:absolute;
+	left:670px;
+	top:50px;
+	width:500px;
+	height:600px;
+	background-image: url("../image/M-logo2.jpg");
+    backgournd-size:100%;
+    background-repeat:no-repeat;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
